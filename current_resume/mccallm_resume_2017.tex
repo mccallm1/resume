@@ -1,0 +1,101 @@
+% LaTeX file for resume 
+% This file uses the resume document class (res.cls)
+
+\documentclass{res} 
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+\newsectionwidth{0pt}  % So the text is not indented under section headings
+\setlength{\textheight}{10.2in} % set text height big enough for box
+\topmargin=-.5in       % to start box .5in from top of page
+\oddsidemargin=-.5in   % to start box .5in from left of page
+    
+\begin{document}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following lines define \boxaround, used to draw a box on the page.
+% The parameter is the entire text of the resume. Must fit on one page!
+%
+% \boxaroundhmargin is the left & right margin around the text inside the box.
+% \boxaroundvmargin is the top & bottom margin around the text inside the box.
+% \boxrulethickness controls thickness of line used to draw the box.
+% You can change these 3 things in the lines below:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newdimen\boxrulethickness\newdimen\boxaroundhmargin\newdimen\boxaroundvmargin
+\boxrulethickness=.5pt        %controls thickness of line 
+\boxaroundhmargin=45pt        % about a half inch
+\boxaroundvmargin=25pt        % to fit more text on page, make this smaller
+%%%%%%%%%%%%%%%%%%%%%%%%% Don't read this stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hsize=7.5in% \vsize=10.5in             % use bigger dimensions for box
+\newbox\MACboxA  \newdimen\MACdimenA
+% \borderandboxit is used inside \boxaround:
+\def\borderandboxit#1#2#3{\vbox{\hrule height#2\hbox{\vrule width#2\hskip#1\hskip-#2%
+  \vbox{\vskip#1\relax#3\vskip#1}\hskip#1\hskip-#2\vrule width#2}\hrule height#2}}
+%
+\long\def\boxaround#1{\vskip6pt
+  {\MACdimenA=\hsize \advance\MACdimenA by-\boxaroundhmargin
+   \advance\MACdimenA by-\boxaroundhmargin   % once for each side
+   \setbox\MACboxA=\hbox to \hsize{\hskip\boxaroundhmargin%\hss
+                     \vbox{\hsize=\MACdimenA
+                           \vskip\boxaroundvmargin #1
+                           \vskip\boxaroundvmargin}\hss}%
+   \borderandboxit{0pt}\boxrulethickness{\box\MACboxA}}%
+  \vskip2pt plus0pt minus0pt
+}
+%%%%%%%%%%%%%%%%%%%  End of \boxaround macro %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+% \boxaround{ % put the text on the page inside a box  
+
+\name{\huge Miles McCall}
+\address{5359 Ballyntyne Creek Ln S\\Salem, Oregon 97302\\
+        } 
+\address{milescmccall@gmail.com\\
+ (971) 218-3615\\}
+
+ 
+\begin{resume}
+
+%\section{\bf  Objective}  % with postscript font \sl produces bold italic
+%                           with default font (CM) \sl produces slanted type
+%Obtain a position in data analytics.
+
+\section{\bf\Large  Core Competencies} 
+{\sl Language Experience:} C, C++, Python, Perl, R, CUDA, PHP, HTML, SQL, Bash  \hfill
+
+{\sl  Platforms:} Git, POWER8, x86, Linux, Mac, Windows, Android, iOS, server-class environments, cloud environments, large scale clusters
+
+{\sl Technical Skills \& Interests:} high-throughput data, low-latency data processing, networking, DBMS, AI, machine leaning, web development
+\mbox{ }
+
+\section{\bf\Large Education} 
+\textbullet \ {\sl \large Oregon State University}  \hfill  Corvallis, OR     \\
+BS Computer Science | Focus: Bioinformatics  \hfill  September, 2014 - August, 2018
+
+Relevant coursework: \\
+{\sl Computer Science:} advanced programming languages, computer architecture, digital logic, algorithms \& theory of computing, software testing \\
+{\sl Biology:} oceanography, biological networks, genomics, genetics, ecology, marine ecology
+\mbox{ }
+
+\section{\bf\Large Relevant Experience} 
+\textbullet \ {\sl Undergraduate Research Assistant} - HMSC Cowen Lab \hfill Newport, OR March, 2015 - Present \\
+Designed, tuned, and currently support multiple software packages involved in imagery data processing. Responsible for managing large-scale data sets (hundreds of TB's), and maintaining long term, high throughput data processing. Developed a software pipeline incorporating Bash, Python, R, C++, Perl, CUDA, SQL, Postgres, and a web front-end. Worked closely with graduate, doctorate, and post-doc researchers to create custom scripts and functionality specific to the research being done.
+
+\textbullet \ {\sl Website Project} - Web Development \hfill  Corvallis, OR Winter 2016\\
+Worked in a team of five for a term to develop a music sharing website. Users were able to log in to the site to upload their favorite songs to pages for specific genres. It featured an interactive graphical interface to display content and navigate the site. Built from scratch, the project included: javascript, css, html, php, file uploads and file management, multi-user systems, and web security.  
+
+\textbullet \ {\sl Senior Design Project} - OSU Personal Robotics Lab \hfill Corvallis, OR September, 2017 - Present \\
+{\sl Deep Learning For Object Recognition on a Mobile Robot} \\
+Utilized Fetch hardware and ROS software, neural networks, GPU processing, and image processing algorithms to create an intelligent agent capable of identifying individual instances of different object classes. Researched the viability of several experimental technologies, such as Intel Movidius compute sticks. Took advantage of sequential online learning to improve image classification, allowing for new data to be dynamically added to the robot's knowledge base. Met frequently with client to manage project progress and ensure satisfaction in final product. Managed a year long project with collaborative programming, version control, specific responsibilities and expertise. Presented at the 2018 OSU Engineering Expo. 
+
+\textbullet \ {\sl Usability Project} - Introduction to Usability Engineering \hfill Corvallis, OR Spring 2017 \\
+Worked in a team of three to create a prototype of the Oregon State employee website focusing on intuitive and user-friendly features. We collaborated in gathering input through surveys and interviewing users, worked to make more inclusive software, and went through a multiple version development process to add revisions with novel insight. 
+
+\section{\bf\large  Hobbies \& Other Experience}
+{\it Hobbies:} biking, mixed martial arts, weight lifting, rock climbing, gardening, card games, cooking
+
+{\it Volunteer Activities:} summer camp counselor: 2008 - 2012
+\end{resume}
+\vfill %    end the material being boxed.
+\end{document}
+
+
+
